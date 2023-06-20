@@ -11,6 +11,16 @@ preorder :: BST a -> [a]
 preorder EmptyTree = []
 preorder (Node a left right) = [a] ++ preorder left ++ preorder right
 
+-- Inorder traversal of a BST
+inorder :: BST a -> [a]
+inorder EmptyTree = []
+inorder (Node a left right) = inorder left ++ [a] ++ inorder right
+
+-- Postorder traversal of a BST
+postorder :: BST a -> [a]
+postorder EmptyTree = []
+postorder (Node a left right) = postorder left ++ postorder right ++ [a]
+
 main :: IO ()
 main = do
   let values = [10, 2, 5, 20]
